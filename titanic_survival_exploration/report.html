@@ -11773,7 +11773,7 @@ Run the code cell below to load our data and display the first few entries (pass
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11804,108 +11804,19 @@ Run the code cell below to load our data and display the first few entries (pass
 
 
 <div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
 
-<div class="output_html rendered_html output_subarea ">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-      <th>Pclass</th>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Ticket</th>
-      <th>Fare</th>
-      <th>Cabin</th>
-      <th>Embarked</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Braund, Mr. Owen Harris</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>A/5 21171</td>
-      <td>7.2500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
-      <td>female</td>
-      <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>PC 17599</td>
-      <td>71.2833</td>
-      <td>C85</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
-      <td>Heikkinen, Miss. Laina</td>
-      <td>female</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>STON/O2. 3101282</td>
-      <td>7.9250</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>113803</td>
-      <td>53.1000</td>
-      <td>C123</td>
-      <td>S</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>0</td>
-      <td>3</td>
-      <td>Allen, Mr. William Henry</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>373450</td>
-      <td>8.0500</td>
-      <td>NaN</td>
-      <td>S</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
+<span class="ansi-red-fg">ImportError</span>Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-342b4c52d94c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-red-intense-fg ansi-bold"># Import supplementary visualizations code visuals.py</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span><span class="ansi-green-intense-fg ansi-bold">import</span> visuals <span class="ansi-green-intense-fg ansi-bold">as</span> vs
+<span class="ansi-green-intense-fg ansi-bold">      8</span> 
+<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-red-intense-fg ansi-bold"># Pretty display for notebooks</span>
 
+<span class="ansi-red-fg">ImportError</span>: No module named visuals</pre>
+</div>
 </div>
 
 </div>
@@ -13648,10 +13559,25 @@ Make sure to keep track of the various features and conditions you tried before 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+
+<span class="c1"># In the way I want to approach to get the accuracy answer. I was look at the features Pclass and SibSp and the range of features </span>
+<span class="c1"># Ages. I split most of the outcomes base on following assumption and logical through fit the feture and testing out. The visualize </span>
+<span class="c1"># function is the effective tool that I used to improve my prediction. </span>
+<span class="c1"># At first I use the features Pclass to visulize for both male and female to see which features really affective the prediction </span>
+<span class="c1"># rate. Second, I including the range of [Age &lt; 10 or Age &gt; 10] to see which survival.Finally I add more feature of SibSp. Some features</span>
+<span class="c1"># really affective the prediction rate in which I am condition on as the female that as features Pclass less than 3 is survive much more</span>
+<span class="c1"># better than female the Pclass 3. Besides, if the female has age less than 10 and exactly in Pclass3, the survival rate also pretty high</span>
+<span class="c1"># compare to other Pclass. On the other hand, the Pclass of male is a little bit different. It requires male has Pclass less than 3. </span>
+<span class="c1"># This also add more decision branch to my condioning. Finally, the last condition I put on when I recognize by visulizing the data. </span>
+<span class="c1"># The male has no SibSp, and age &lt; 10 has also pretty high survival rate compare to female or male that has SibSp. This add one more </span>
+<span class="c1"># conditioning on my prediction. Finally, male that in Pclass &lt; 3 seem to be lessly survive in compare to male in other class. </span>
+
+<span class="c1"># In general,the Pclass, the male and female, and the ages features are the most effective feature that can raise or plung the prediction </span>
+<span class="c1"># rate. Other features that I used also important, but it is less effectives in term of prediction.  </span>
 </pre></div>
 
 </div>
@@ -13663,9 +13589,18 @@ Make sure to keep track of the various features and conditions you tried before 
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Predictions have an accuracy of 80.25%.
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+
+<span class="ansi-red-fg">NameError</span>Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-ef3065ab8dbb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-intense-fg ansi-bold">print</span> accuracy_score<span class="ansi-yellow-intense-fg ansi-bold">(</span>outcomes<span class="ansi-yellow-intense-fg ansi-bold">,</span> predictions<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-red-intense-fg ansi-bold"># In the way I want to approach to get the accuracy answer. I was look at the features Pclass and SibSp and the range of features</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-intense-fg ansi-bold"># Ages. I split most of the outcomes base on following assumption and logical through fit the feture and testing out. The visualize</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-red-intense-fg ansi-bold"># function is the effective tool that I used to improve my prediction.</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;accuracy_score&#39; is not defined</pre>
 </div>
 </div>
 
